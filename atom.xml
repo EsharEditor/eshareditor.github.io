@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://eshareditor.com/"/>
-  <updated>2016-09-07T09:32:55.617Z</updated>
+  <updated>2016-09-14T06:41:47.180Z</updated>
   <id>http://eshareditor.com/</id>
   
   <author>
@@ -16,9 +16,90 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Hue 编译安装</title>
+    <link href="http://eshareditor.com/undefined/undefined/14/Hue-%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85/"/>
+    <id>http://eshareditor.com/undefined/undefined/14/Hue-编译安装/</id>
+    <published>2016-09-14T01:46:21.000Z</published>
+    <updated>2016-09-14T06:41:47.180Z</updated>
+    
+    <content type="html"><![CDATA[<p>Hue是一个能够与Apache Hadoop交互的Web应用程序，一个开源的Apache Hadoop UI。<br>本文介绍Hue的编译、安装、启动过程以及记录这个过程中可能遇到的问题。</p>
+<img src="/uploads/Hue-编译安装/hue-search.png">
+<a id="more"></a>
+<h2 id="编译、安装、启动"><a href="#编译、安装、启动" class="headerlink" title="编译、安装、启动"></a>编译、安装、启动</h2><h3 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h3><ul>
+<li>IOS: Centos6.7  (minimum)</li>
+<li>Maven 3.3.3</li>
+<li>Ant 1.9.4+ </li>
+<li>Python 2.6.6+</li>
+</ul>
+<h3 id="依赖的工具包"><a href="#依赖的工具包" class="headerlink" title="依赖的工具包"></a>依赖的工具包</h3><ul>
+<li><p>Hue官网列出的工具包</p>
+<blockquote>
+<p>asciidoc krb5-devel libxml2-devel libxslt-devel libtidy mysql mysql-devel openldap-devel python-devel sqlite-devel make openssl-devel gcc gcc-c++ gmp-devel cyrus-sasl-plain cyrus-sasl-devel cyrus-sasl-gssapi libffi-devel</p>
+</blockquote>
+</li>
+<li><p>额外需要的工具包(在编译过程中根据报错信息需额外安装的工具包)</p>
+<blockquote>
+<p>python-simplejson python-setuptools rsync saslwrapper-devel pycrypto libyaml-devel libsasl2-dev libsasl2-modules-gssapi-mit libkrb5-dev libssl-devel</p>
+</blockquote>
+</li>
+<li><p>注意：Centos7系统安装：gmp libtidy mysql-devel工具无法安装。且在编译过程中提示需安装ipdb: centos7系统自带的python2.7，而默认情况下python2.7不提供pip工具的，需手动安装好，或者使用hue里的python2.7的pip工具来安装ipdb。命令：pip install ipdb</p>
+</li>
+</ul>
+<h3 id="编译安装"><a href="#编译安装" class="headerlink" title="编译安装"></a>编译安装</h3><ul>
+<li>下载</li>
+</ul>
+<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git <span class="keyword">clone</span> <span class="title">https</span>://github.com/cloudera/hue.git</div></pre></td></tr></table></figure>
+<ul>
+<li>编译</li>
+</ul>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$ </span>make apps（这个过程可能由于网络等问题导致某些包无法下载，多执行几次就OK）</div><div class="line"><span class="variable">$ </span>make locales（编译多语言版本支持）</div></pre></td></tr></table></figure>
+<p>注：若只编译简体中文版，需修改$HUE/desktop/core/src/desktop/settings.py文件中：LANGUAGE_CODE = ‘zh_CN’，并删除LANGUAGES中的其它语言项。</p>
+<ul>
+<li>安装</li>
+</ul>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$ </span>make install (默认安装到/usr/local目录下)</div><div class="line"><span class="variable">$ </span>make install PREFIX=<span class="regexp">/usr/hdp</span><span class="regexp">/2.3.4.0-3485/hue</span> (指定安装目录)</div></pre></td></tr></table></figure>
+<ul>
+<li>测试</li>
+</ul>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ HUE<span class="regexp">/build/</span>env<span class="regexp">/bin/</span>hue test all</div></pre></td></tr></table></figure>
+<h3 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h3><ul>
+<li>添加用户,目录赋权</li>
+</ul>
+<figure class="highlight processing"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ adduser <span class="built_in">hue</span> (确保<span class="built_in">hue</span>用户与其home目录存在)</div><div class="line">$ chown -R <span class="built_in">hue</span>:<span class="built_in">hue</span> /usr/local/<span class="built_in">hue</span></div></pre></td></tr></table></figure>
+<ul>
+<li>启动Hue</li>
+</ul>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ <span class="variable">$HUE</span><span class="regexp">/build/</span>env<span class="regexp">/bin/</span>supervisor &amp; (用户生产环境)</div><div class="line">$ <span class="variable">$HUE</span><span class="regexp">/build/</span>env<span class="regexp">/bin/</span>hue runcpserver &amp; (用户开发模式)</div></pre></td></tr></table></figure>
+<p>Web浏览器：<a href="http://HUE_SERVER_HOST:8000" target="_blank" rel="external">http://HUE_SERVER_HOST:8000</a>  第一次输入的用户名密码为超级管理员的用户密码。</p>
+<h2 id="问题剖析"><a href="#问题剖析" class="headerlink" title="问题剖析"></a>问题剖析</h2><ol>
+<li><p>Hue 3.10.0以上版本编译过程中报错：error: ffi.h: No such file or directory。<br>问题分析：编译环境缺少libssl-devel libffi-devel,编译过程中若缺少一些依赖的工具包，会有很多类似的错误。<br>解决办法：yum -y install libssl-devel libffi-devel</p>
+</li>
+<li><p>Hue在启动过程中报错：UnicodeDecodeError: ‘ascii’ codec can’t decode byte 0xef in position 166: ordinal not in range(128)。<br>问题分析：编码问题，Python的str默认是ascii编码，和unicode编码冲突<br>解决办法：在出现问题的python文件或者页面添加如下3行信息：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> sys</div><div class="line">reload(sys)</div><div class="line">sys.setdefaultencoding(<span class="string">'utf-8'</span>)</div></pre></td></tr></table></figure>
+</li>
+<li><p>Hue 3.9.0及以下版本自带LivyServer服务，支持Spark 1.6.0以下版本；<br>Hue 3.10.0及以上版本将不在集成LivyServer服务，支持Spark 1.6.0及以上版本，LivyServer服务需单独安装部署。</p>
+</li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Hue是一个能够与Apache Hadoop交互的Web应用程序，一个开源的Apache Hadoop UI。&lt;br&gt;本文介绍Hue的编译、安装、启动过程以及记录这个过程中可能遇到的问题。&lt;/p&gt;
+&lt;img src=&quot;/uploads/Hue-编译安装/hue-search.png&quot;&gt;
+    
+    </summary>
+    
+      <category term="BigData" scheme="http://eshareditor.com/categories/BigData/"/>
+    
+    
+      <category term="Hue" scheme="http://eshareditor.com/tags/Hue/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Hello World</title>
-    <link href="http://eshareditor.com/2016/09/12/hello-world/"/>
-    <id>http://eshareditor.com/2016/09/12/hello-world/</id>
+    <link href="http://eshareditor.com/undefined/undefined/12/hello-world/"/>
+    <id>http://eshareditor.com/undefined/undefined/12/hello-world/</id>
     <published>2016-09-12T03:04:07.189Z</published>
     <updated>2016-09-07T09:32:55.617Z</updated>
     
@@ -44,14 +125,14 @@
   
   <entry>
     <title>About Me</title>
-    <link href="http://eshareditor.com/2016/09/09/About-Me/"/>
-    <id>http://eshareditor.com/2016/09/09/About-Me/</id>
+    <link href="http://eshareditor.com/undefined/undefined/09/About-Me/"/>
+    <id>http://eshareditor.com/undefined/undefined/09/About-Me/</id>
     <published>2016-09-09T11:00:00.000Z</published>
-    <updated>2016-09-09T12:13:24.205Z</updated>
+    <updated>2016-09-14T01:30:16.187Z</updated>
     
     <content type="html"><![CDATA[<blockquote><p>You can either travel or read,but either your body or soul must be on the way. </p>
 <footer><strong>《Roman Holiday》</strong></footer></blockquote>
-<img src="/images/AboutMe_Travel.jpg" width="600" height="350" title="旅 行">
+<img src="/uploads/About-Me/AboutMe_Travel.jpg" width="600" height="350" title="旅 行">
 ]]></content>
     
     <summary type="html">
