@@ -128,17 +128,19 @@
     <link href="https://eshareditor.github.io/2016/09/09/About-Me/"/>
     <id>https://eshareditor.github.io/2016/09/09/About-Me/</id>
     <published>2016-09-09T11:00:00.000Z</published>
-    <updated>2016-09-14T01:30:16.187Z</updated>
+    <updated>2016-09-14T08:21:33.057Z</updated>
     
     <content type="html"><![CDATA[<blockquote><p>You can either travel or read,but either your body or soul must be on the way. </p>
 <footer><strong>《Roman Holiday》</strong></footer></blockquote>
-<img src="/uploads/About-Me/AboutMe_Travel.jpg" width="600" height="350" title="旅 行">
+<img src="/uploads/About-Me/AboutMe_Travel.jpg">
+<a id="more"></a>
 ]]></content>
     
     <summary type="html">
     
       &lt;blockquote&gt;&lt;p&gt;You can either travel or read,but either your body or soul must be on the way. &lt;/p&gt;
-&lt;footer&gt;&lt;strong&gt;《Roman Holiday》&lt;/strong&gt;&lt;
+&lt;footer&gt;&lt;strong&gt;《Roman Holiday》&lt;/strong&gt;&lt;/footer&gt;&lt;/blockquote&gt;
+&lt;img src=&quot;/uploads/About-Me/AboutMe_Travel.jpg&quot;&gt;
     
     </summary>
     

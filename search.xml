@@ -87,7 +87,8 @@
       <url>https://eshareditor.github.io/2016/09/09/About-Me/</url>
       <content type="html"><![CDATA[<blockquote><p>You can either travel or read,but either your body or soul must be on the way. </p>
 <footer><strong>《Roman Holiday》</strong></footer></blockquote>
-<img src="/uploads/About-Me/AboutMe_Travel.jpg" width="600" height="350" title="旅 行">
+<img src="/uploads/About-Me/AboutMe_Travel.jpg">
+<a id="more"></a>
 ]]></content>
     </entry>
     
