@@ -4,9 +4,9 @@
   <subtitle>Do whatever you want.</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://eshareditor.com/"/>
+  <link href="http://eshareditor.github.com/"/>
   <updated>2016-09-14T06:41:47.180Z</updated>
-  <id>http://eshareditor.com/</id>
+  <id>http://eshareditor.github.com/</id>
   
   <author>
     <name>Kyle Joe</name>
@@ -17,8 +17,8 @@
   
   <entry>
     <title>Hue 编译安装</title>
-    <link href="http://eshareditor.com/undefined/undefined/14/Hue-%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85/"/>
-    <id>http://eshareditor.com/undefined/undefined/14/Hue-编译安装/</id>
+    <link href="http://eshareditor.github.com/undefined/undefined/14/Hue-%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85/"/>
+    <id>http://eshareditor.github.com/undefined/undefined/14/Hue-编译安装/</id>
     <published>2016-09-14T01:46:21.000Z</published>
     <updated>2016-09-14T06:41:47.180Z</updated>
     
@@ -89,17 +89,17 @@
     
     </summary>
     
-      <category term="BigData" scheme="http://eshareditor.com/categories/BigData/"/>
+      <category term="BigData" scheme="http://eshareditor.github.com/categories/BigData/"/>
     
     
-      <category term="Hue" scheme="http://eshareditor.com/tags/Hue/"/>
+      <category term="Hue" scheme="http://eshareditor.github.com/tags/Hue/"/>
     
   </entry>
   
   <entry>
     <title>Hello World</title>
-    <link href="http://eshareditor.com/undefined/undefined/12/hello-world/"/>
-    <id>http://eshareditor.com/undefined/undefined/12/hello-world/</id>
+    <link href="http://eshareditor.github.com/undefined/undefined/12/hello-world/"/>
+    <id>http://eshareditor.github.com/undefined/undefined/12/hello-world/</id>
     <published>2016-09-12T03:04:07.189Z</published>
     <updated>2016-09-07T09:32:55.617Z</updated>
     
@@ -125,8 +125,8 @@
   
   <entry>
     <title>About Me</title>
-    <link href="http://eshareditor.com/undefined/undefined/09/About-Me/"/>
-    <id>http://eshareditor.com/undefined/undefined/09/About-Me/</id>
+    <link href="http://eshareditor.github.com/undefined/undefined/09/About-Me/"/>
+    <id>http://eshareditor.github.com/undefined/undefined/09/About-Me/</id>
     <published>2016-09-09T11:00:00.000Z</published>
     <updated>2016-09-14T01:30:16.187Z</updated>
     
@@ -142,10 +142,10 @@
     
     </summary>
     
-      <category term="life" scheme="http://eshareditor.com/categories/life/"/>
+      <category term="life" scheme="http://eshareditor.github.com/categories/life/"/>
     
     
-      <category term="life" scheme="http://eshareditor.com/tags/life/"/>
+      <category term="life" scheme="http://eshareditor.github.com/tags/life/"/>
     
   </entry>
   
