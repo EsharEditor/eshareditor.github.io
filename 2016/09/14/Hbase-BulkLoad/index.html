@@ -88,7 +88,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="life," />
+  <meta name="keywords" content="Hbase," />
 
 
 
@@ -106,21 +106,19 @@
 
 
 
-<meta name="description" content="You can either travel or read,but either your body or soul must be on the way. 
-《Roman Holiday》">
+<meta name="description" content="Hbase快速数据导入工具BulkLoad：利用Hbase的数据以特定的格式存储在HDFS内这一原理，通过MapReduce作业直接生成这种数据格式文件，然后上传到HDFS上合适的位置，完成大量数据快速入库。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="About Me">
-<meta property="og:url" content="https://eshareditor.github.io/2016/09/09/About-Me/index.html">
+<meta property="og:title" content="Hbase BulkLoad">
+<meta property="og:url" content="https://eshareditor.github.io/2016/09/14/Hbase-BulkLoad/index.html">
 <meta property="og:site_name" content="EsharEditor">
-<meta property="og:description" content="You can either travel or read,but either your body or soul must be on the way. 
-《Roman Holiday》">
-<meta property="og:image" content="https://eshareditor.github.io/uploads/About-Me/AboutMe_Travel.jpg">
-<meta property="og:updated_time" content="2016-09-14T08:21:33.057Z">
+<meta property="og:description" content="Hbase快速数据导入工具BulkLoad：利用Hbase的数据以特定的格式存储在HDFS内这一原理，通过MapReduce作业直接生成这种数据格式文件，然后上传到HDFS上合适的位置，完成大量数据快速入库。">
+<meta property="og:image" content="https://eshareditor.github.io/uploads/Hbase-BulkLoad/Hbase-BulkLoad.jpg">
+<meta property="og:image" content="https://eshareditor.github.io/uploads/Hbase-BulkLoad/Hbase-BulkLoad.jpg">
+<meta property="og:updated_time" content="2016-09-15T02:28:22.491Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="About Me">
-<meta name="twitter:description" content="You can either travel or read,but either your body or soul must be on the way. 
-《Roman Holiday》">
-<meta name="twitter:image" content="https://eshareditor.github.io/uploads/About-Me/AboutMe_Travel.jpg">
+<meta name="twitter:title" content="Hbase BulkLoad">
+<meta name="twitter:description" content="Hbase快速数据导入工具BulkLoad：利用Hbase的数据以特定的格式存储在HDFS内这一原理，通过MapReduce作业直接生成这种数据格式文件，然后上传到HDFS上合适的位置，完成大量数据快速入库。">
+<meta name="twitter:image" content="https://eshareditor.github.io/uploads/Hbase-BulkLoad/Hbase-BulkLoad.jpg">
 
 
 
@@ -141,9 +139,9 @@
 
 
 
-  <link rel="canonical" href="https://eshareditor.github.io/2016/09/09/About-Me/"/>
+  <link rel="canonical" href="https://eshareditor.github.io/2016/09/14/Hbase-BulkLoad/"/>
 
-  <title> About Me | EsharEditor </title>
+  <title> Hbase BulkLoad | EsharEditor </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -316,7 +314,7 @@
             
             
               
-                About Me
+                Hbase BulkLoad
               
             
           </h1>
@@ -328,8 +326,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-09-09T19:00:00+08:00" content="2016-09-09">
-              2016-09-09
+            <time itemprop="dateCreated" datetime="2016-09-14T16:40:23+08:00" content="2016-09-14">
+              2016-09-14
             </time>
           </span>
 
@@ -342,8 +340,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/life/" itemprop="url" rel="index">
-                    <span itemprop="name">life</span>
+                  <a href="/categories/Bigdata/" itemprop="url" rel="index">
+                    <span itemprop="name">Bigdata</span>
                   </a>
                 </span>
 
@@ -358,8 +356,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/09/09/About-Me/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/09/About-Me/" itemprop="commentsCount"></span>
+                <a href="/2016/09/14/Hbase-BulkLoad/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/14/Hbase-BulkLoad/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -387,10 +385,52 @@
       
 
       
-        <blockquote><p>You can either travel or read,but either your body or soul must be on the way. </p>
-<footer><strong>《Roman Holiday》</strong></footer></blockquote>
-<img src="/uploads/About-Me/AboutMe_Travel.jpg">
+        <p>Hbase快速数据导入工具BulkLoad：利用Hbase的数据以特定的格式存储在HDFS内这一原理，通过MapReduce作业直接生成这种数据格式文件，然后上传到HDFS上合适的位置，完成大量数据快速入库。</p>
+<img src="/uploads/Hbase-BulkLoad/Hbase-BulkLoad.jpg">
 <a id="more"></a>
+<h2 id="Hbase数据带入方式"><a href="#Hbase数据带入方式" class="headerlink" title="Hbase数据带入方式"></a>Hbase数据带入方式</h2><ul>
+<li>HBase Client 调用方式</li>
+<li>MapReduce 任务方式</li>
+<li>BulkLoad 工具方式</li>
+<li>Sqoop 工具方式</li>
+</ul>
+<h2 id="BulkLoad优劣势"><a href="#BulkLoad优劣势" class="headerlink" title="BulkLoad优劣势"></a>BulkLoad优劣势</h2><h3 id="优势"><a href="#优势" class="headerlink" title="优势"></a>优势</h3><ul>
+<li>如果一次性入导入Hbase表的数据量巨大，不仅处理速度慢不说，还特别占用Region资源， 一个比较高效便捷的方法就是使用 “Bulk Loading”方法，即HBase提供的HFileOutputFormat类。</li>
+<li>利用Hbase的数据以特定的格式存储在HDFS内这一原理，直接生成这种HDFS中存储的数据格式文件，然后上传至合适位置，即完成巨量数据快速入库的办法。配合mapreduce完成，高效便捷，而且不占用region资源，增添负载。</li>
+</ul>
+<h3 id="劣势"><a href="#劣势" class="headerlink" title="劣势"></a>劣势</h3><ul>
+<li>仅适合初次数据导入，即表内数据为空。</li>
+<li>HBase集群与Hadoop集群为同一集群，即HBase所基于的HDFS为生成HFile的MR的集群。</li>
+</ul>
+<h2 id="BulkLoad使用"><a href="#BulkLoad使用" class="headerlink" title="BulkLoad使用"></a>BulkLoad使用</h2><ol>
+<li>从数据源（通常为文本文件或其它数据库）提取数据并上传到HDFS。</li>
+<li>利用一个MapReduce作业准备数据：通过编排一个MapReduce作业，需手动编写map函数，作业需要使用rowkey(行键)作为输出Key，KeyValue、Put或者Delete作为输出Value。MapReduce作业需要使用Hbase提供的HFileOutputFormat2来生成Hbase底层存储的HFile数据格式文件。为了有效的导入数据，需要配置HFileOutputFormat2使得每一个输出文件都在一个合适的区域中。</li>
+<li>告诉RegionServers数据的位置并导入数据，这一步需要使用Hbase中的LoadIncrementalHFiles，将文件在HDFS上的位置传递给它，它就会利用RegionServer将数据导入到相应的区域，完成与Hbase表的关联。<img src="/uploads/Hbase-BulkLoad/Hbase-BulkLoad.jpg" title="操作流程图">
+</li>
+</ol>
+<h3 id="命令行导入"><a href="#命令行导入" class="headerlink" title="命令行导入"></a>命令行导入</h3><h4 id="直接导入数据"><a href="#直接导入数据" class="headerlink" title="直接导入数据"></a>直接导入数据</h4><p>在Hbase中创建空表，如userinfo,使用Hbase自带的ImportTsv工具导入/opt/userinfo.tsv数据文件</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hadoop jar $HBASE_HOME<span class="regexp">/lib/</span>hbase-server<span class="number">-1.1</span><span class="number">.2</span>.jar importtsv -Dimporttsv.columns=HBASE_ROW_KEY,<span class="string">cf1:</span>name,<span class="string">cf1:</span>sex,<span class="string">cf2:</span><span class="class"><span class="keyword">class</span> <span class="title">userinfo</span> /<span class="title">opt</span>/<span class="title">userinfo</span>.<span class="title">tsv</span></span></div></pre></td></tr></table></figure>
+<h4 id="分步导入数据"><a href="#分步导入数据" class="headerlink" title="分步导入数据"></a>分步导入数据</h4><ul>
+<li>将userinfo.tsv文件上传到HDFS某个目录，并在Hbase中创建userinfo表</li>
+</ul>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hadoop fs -put <span class="regexp">/opt/u</span>serinfo.tsv <span class="regexp">/data_dir/</span>source_file</div></pre></td></tr></table></figure>
+<ul>
+<li>利用ImportTsv工具的Dimporttsv.bulk.output参数项指定生成的HFile文件位置/date_dir/bulkload_data/output</li>
+</ul>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hadoop jar $HBASE_HOME/lib/hbase-server-<span class="number">1.1</span>.<span class="number">2</span>.jar importtsv -Dimporttsv.bulk.output=<span class="regexp">/date_dir/bulkload</span>_data/output -Dimporttsv.columns=HBASE_ROW_KEY,<span class="symbol">cf1:</span>name,<span class="symbol">cf1:</span>sex,<span class="symbol">cf2:</span><span class="class"><span class="keyword">class</span> <span class="title">userinfo</span> /<span class="title">opt</span>/<span class="title">userinfo</span>.<span class="title">tsv</span></span></div></pre></td></tr></table></figure>
+<ul>
+<li>利用completebulkload完成bluk load数据导入</li>
+</ul>
+<figure class="highlight crystal"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hadoop jar $HBASE_HOME/<span class="class"><span class="keyword">lib</span>/<span class="title">hbase</span>-<span class="title">server</span>-1.1.2.<span class="title">jar</span> <span class="title">completebulkload</span> /<span class="title">date_dir</span>/<span class="title">bulkload_data</span>/<span class="title">output</span> <span class="title">userinfo</span></span></div></pre></td></tr></table></figure>
+<h3 id="相关说明"><a href="#相关说明" class="headerlink" title="相关说明"></a>相关说明</h3><ol>
+<li>将数据文件生成HFile方式是所有的加载方案里面是最快的，前提是：Hbase表须为空！如果表中已经有数据，HFile再次导入的时候，HBase的表会触发split分割操作</li>
+<li>最终输出结果，无论是Map还是Reduce，输出建议只使用<immutablebyteswritable, keyvalue=""></immutablebyteswritable,></li>
+<li>指定的列和源文件字段必须全部匹配，不匹配则一定导入失败</li>
+<li>命令行导入时默认的分隔符为tab符</li>
+<li>RowKey可以在任何位置：<br>假设存在数据4列（逗号为分隔符）<br>1，2，3，4<br>第一列RowKey<br>RowKey，2，3，4<br>第三列RowKey<br>1，2，RowKey，4</li>
+<li>常用参数说明：<br>-Dimporttsv.skip.bad.lines=false –&gt; 若遇到无效行则失败<br>‘-Dimporttsv.separator=|’或‘-Dimporttsv.separator=,’ –&gt; 指定分割符<br>-Dimporttsv.timestamp=currentTimeAsLong –&gt; 导入时使用指定的时间戳<br>-Dimporttsv.mapper.class=my.Mapper –&gt; 使用用户指定的Mapper类(默认的org.apache.hadoop.hbase.mapreduce.TsvImporterMapper)</li>
+</ol>
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p><a href="http://www.ibm.com/developerworks/cn/opensource/os-cn-data-import/index.html" target="_blank" rel="external">http://www.ibm.com/developerworks/cn/opensource/os-cn-data-import/index.html</a><br><a href="http://www.aboutyun.com/thread-11652-1-1.html" target="_blank" rel="external">http://www.aboutyun.com/thread-11652-1-1.html</a></p>
 
       
     </div>
@@ -418,7 +458,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/life/" rel="tag">#life</a>
+            <a href="/tags/Hbase/" rel="tag">#Hbase</a>
           
         </div>
       
@@ -427,13 +467,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2016/09/14/Hue-编译安装/" rel="next" title="Hue 编译安装">
+                <i class="fa fa-chevron-left"></i> Hue 编译安装
+              </a>
+            
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/09/12/hello-world/" rel="prev" title="Hello World">
-                Hello World <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -482,8 +522,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/09/09/About-Me/"
-           data-title="About Me" data-url="https://eshareditor.github.io/2016/09/09/About-Me/">
+      <div class="ds-thread" data-thread-key="2016/09/14/Hbase-BulkLoad/"
+           data-title="Hbase BulkLoad" data-url="https://eshareditor.github.io/2016/09/14/Hbase-BulkLoad/">
       </div>
     
   </div>
@@ -651,7 +691,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Hbase数据带入方式"><span class="nav-number">1.</span> <span class="nav-text">Hbase数据带入方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BulkLoad优劣势"><span class="nav-number">2.</span> <span class="nav-text">BulkLoad优劣势</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#优势"><span class="nav-number">2.1.</span> <span class="nav-text">优势</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#劣势"><span class="nav-number">2.2.</span> <span class="nav-text">劣势</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BulkLoad使用"><span class="nav-number">3.</span> <span class="nav-text">BulkLoad使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#命令行导入"><span class="nav-number">3.1.</span> <span class="nav-text">命令行导入</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#直接导入数据"><span class="nav-number">3.1.1.</span> <span class="nav-text">直接导入数据</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#分步导入数据"><span class="nav-number">3.1.2.</span> <span class="nav-text">分步导入数据</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#相关说明"><span class="nav-number">3.2.</span> <span class="nav-text">相关说明</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考链接"><span class="nav-number">4.</span> <span class="nav-text">参考链接</span></a></li></ol></div>
             
           </div>
         </section>
