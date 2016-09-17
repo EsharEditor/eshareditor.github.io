@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://eshareditor.github.io/"/>
-  <updated>2016-09-17T03:30:44.209Z</updated>
+  <updated>2016-09-17T03:46:12.014Z</updated>
   <id>https://eshareditor.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://eshareditor.github.io/2016/09/16/Hue-Component-Use/"/>
     <id>https://eshareditor.github.io/2016/09/16/Hue-Component-Use/</id>
     <published>2016-09-16T01:48:07.000Z</published>
-    <updated>2016-09-17T03:30:44.209Z</updated>
+    <updated>2016-09-17T03:46:12.014Z</updated>
     
     <content type="html"><![CDATA[<p>Hue作为一个能与Hadoop集群进行交互的Web UI，大大降低了用户对某些大数据组件的操作使用成本。本文通过一些简单实例来介绍Hue中某些组件的使用，如Oozie任务调度，Hbase BulkLoad数据导入，Pig数据加载等</p>
 <img src="/uploads/Hue-Component-Use/Hue-Component-Use.jpg">
@@ -57,7 +57,7 @@
     
     </summary>
     
-      <category term="Bigdata" scheme="https://eshareditor.github.io/categories/Bigdata/"/>
+      <category term="BigData" scheme="https://eshareditor.github.io/categories/BigData/"/>
     
     
       <category term="Hue" scheme="https://eshareditor.github.io/tags/Hue/"/>
@@ -215,13 +215,16 @@
   </entry>
   
   <entry>
-    <title>Hello World</title>
+    <title>Hexo 简介</title>
     <link href="https://eshareditor.github.io/2016/09/12/hello-world/"/>
     <id>https://eshareditor.github.io/2016/09/12/hello-world/</id>
     <published>2016-09-12T03:04:07.189Z</published>
-    <updated>2016-09-07T09:32:55.617Z</updated>
+    <updated>2016-09-17T03:41:38.831Z</updated>
     
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+    <content type="html"><![CDATA[<p>Hexo: A fast, simple &amp; powerful blog framework, powered by Node.js.</p>
+<img src="/uploads/Hello-World/Hello-World-Hexo.jpg">
+<a id="more"></a>
+<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
 <h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
@@ -234,10 +237,15 @@
     
     <summary type="html">
     
-      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+      &lt;p&gt;Hexo: A fast, simple &amp;amp; powerful blog framework, powered by Node.js.&lt;/p&gt;
+&lt;img src=&quot;/uploads/Hello-World/Hello-World-Hexo.jpg&quot;&gt;
     
     </summary>
     
+      <category term="Web" scheme="https://eshareditor.github.io/categories/Web/"/>
+    
+    
+      <category term="Hexo" scheme="https://eshareditor.github.io/tags/Hexo/"/>
     
   </entry>
   
