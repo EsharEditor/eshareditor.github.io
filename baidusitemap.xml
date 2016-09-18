@@ -4,6 +4,28 @@
 
     
   <url>
+    <loc>https://eshareditor.github.io/2016/09/18/Kerberos-KDC-Install/</loc>
+    <lastmod>2016-09-18T11:44:06.977Z</lastmod>
+    <data>
+        <display>
+        <title>基于Ambari的Kerberos安装和命令使用</title>
+        <pubTime>2016-09-18T09:15:55.000Z</pubTime>
+        
+        <tag>Kerberos</tag>
+         
+        <tag>Ambari</tag>
+         
+         
+           
+             
+              <breadCrumb title="BigData" url="https://eshareditor.github.io/categories/BigData/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://eshareditor.github.io/2016/09/16/Hue-Component-Use/</loc>
     <lastmod>2016-09-17T03:46:12.014Z</lastmod>
     <data>

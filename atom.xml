@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://eshareditor.github.io/"/>
-  <updated>2016-09-17T03:46:12.014Z</updated>
+  <updated>2016-09-18T11:44:06.977Z</updated>
   <id>https://eshareditor.github.io/</id>
   
   <author>
@@ -14,6 +14,74 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>基于Ambari的Kerberos安装和命令使用</title>
+    <link href="https://eshareditor.github.io/2016/09/18/Kerberos-KDC-Install/"/>
+    <id>https://eshareditor.github.io/2016/09/18/Kerberos-KDC-Install/</id>
+    <published>2016-09-18T09:15:55.000Z</published>
+    <updated>2016-09-18T11:44:06.977Z</updated>
+    
+    <content type="html"><![CDATA[<p>前段时间折腾了点大数据安全(Security)方面的东西，主要应用是大数据集群中安全方面的配置和使用。本文简单介绍下Kerberos认证方面的知识，记录一下通过Ambari搭建的Hadoop集群，Kerberos安装过程中涉及到Kerberos KDC的安装和配置，以及一些常用的命令介绍。</p>
+<img src="/uploads/Kerberos-KDC-Install/Kerberos.png" width="660" height="440">
+<a id="more"></a>
+<h2 id="Kerberos简介"><a href="#Kerberos简介" class="headerlink" title="Kerberos简介"></a>Kerberos简介</h2><p>Kerberos这个名字来源于希腊神话，是冥界守护神兽的名字。Kerberos是一个三头怪兽，之所以用它来命名一种认证协议，是因为在整个认证过程涉及到三方：客户端、服务端和KDC（Key Distribution Center），在Windows域环境中，KDC的角色由DC（Domain Controller）来担当。<br>Kerberos实际上是一种基于票据（Ticket）的认证方式。客户端要访问服务器的资源，需要首先购买服务端认可的票据。也就是说，客户端在访问服务器之前需要预先买好票，等待服务验票之后才能入场。在这之前，客户端需要先买票，但是这张票不能直接购买，需要一张认购权证。客户端在买票之前需要预先获得一张认购权证。这张认购权证和进入服务器的入场券均由KDC发售。如图所示：</p>
+<img src="/uploads/Kerberos-KDC-Install/Kerberos.png" width="660" height="440">
+<h2 id="Ambari-Kerberos安装"><a href="#Ambari-Kerberos安装" class="headerlink" title="Ambari Kerberos安装"></a>Ambari Kerberos安装</h2><p>基于操作系统是Centos6.7版本，Ambari版本2.2.2+，KDC安装节点主机名：server.bigdata</p>
+<h3 id="KDC安装"><a href="#KDC安装" class="headerlink" title="KDC安装"></a>KDC安装</h3><p>1.安装KDC Server</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ yum -y <span class="keyword">install</span> krb5-<span class="keyword">server</span> krb5-libs krb5-workstation</div></pre></td></tr></table></figure>
+<p>2.修改配置文件:/etc/krb5.conf</p>
+<figure class="highlight nix"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">[libdefaults]</div><div class="line">	<span class="attr">renew_lifetime</span> = <span class="number">7</span>d</div><div class="line">	<span class="attr">forwardable</span> = <span class="literal">true</span></div><div class="line">	<span class="attr">default_realm</span> = BIGDATA</div><div class="line">	<span class="attr">ticket_lifetime</span> = <span class="number">24</span>h</div><div class="line">	<span class="attr">dns_lookup_realm</span> = <span class="literal">false</span></div><div class="line">	<span class="attr">dns_lookup_kdc</span> = <span class="literal">false</span></div><div class="line">	<span class="comment">#default_tgs_enctypes = aes des3-cbc-sha1 rc4 des-cbc-md5</span></div><div class="line">	<span class="comment">#default_tkt_enctypes = aes des3-cbc-sha1 rc4 des-cbc-md5</span></div><div class="line">	<span class="attr">forwardable</span> = <span class="literal">true</span></div><div class="line"></div><div class="line">[logging]</div><div class="line">	<span class="attr">default</span> = FILE:/var/log/krb5kdc.log</div><div class="line">	<span class="attr">admin_server</span> = FILE:/var/log/kadmind.log</div><div class="line">  	<span class="attr">kdc</span> = FILE:/var/log/krb5kdc.log</div><div class="line"></div><div class="line">[realms]</div><div class="line">	<span class="attr">BIGDATA</span> = &#123;</div><div class="line">    	<span class="attr">admin_server</span> = server.bigdata</div><div class="line">    	<span class="attr">kdc</span> = server.bigdata</div><div class="line">  	&#125;</div></pre></td></tr></table></figure>
+<p>3.修改文件：/var/kerberos/krb5kdc</p>
+<figure class="highlight nix"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">[kdcdefaults]</div><div class="line"> 	<span class="attr">kdc_ports</span> = <span class="number">88</span></div><div class="line"> 	<span class="attr">kdc_tcp_ports</span> = <span class="number">88</span></div><div class="line"></div><div class="line">[realms]</div><div class="line">	<span class="attr">BIGDATA</span> = &#123;</div><div class="line">  	<span class="comment">#master_key_type = aes256-cts</span></div><div class="line">  	<span class="attr">acl_file</span> = /var/kerberos/krb5kdc/kadm5.acl</div><div class="line">  	<span class="attr">dict_file</span> = /usr/share/dict/words</div><div class="line">  	<span class="attr">admin_keytab</span> = /var/kerberos/krb5kdc/kadm5.keytab</div><div class="line">	<span class="attr">supported_enctypes</span> = aes256-cts:normal aes128-cts:normal des3-hmac-sha1:normal arcfour-hmac:normal des-hmac-sha1:normal des-cbc-md5:normal des-cbc-crc:normal</div><div class="line">  	<span class="attr">max_renewable_life</span> = <span class="number">7</span>d</div><div class="line">  	<span class="attr">default_principal_flags</span> = +renewable, +forwardable</div><div class="line"> &#125;</div></pre></td></tr></table></figure>
+<p>4.创建KDC数据库</p>
+<figure class="highlight armasm"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ db5_util create -r <span class="keyword">BIGDATA </span>-s</div></pre></td></tr></table></figure>
+<p>5.启动KDC数据库并设置开机启动</p>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ /etc/rc.d/init.d/krb5kdc <span class="built_in">start</span></div><div class="line">$ /etc/rc.d/init.d/kadmin <span class="built_in">start</span></div><div class="line">$ chkconfig krb5kdc <span class="keyword">on</span></div><div class="line">$ chkconfig kadmin <span class="keyword">on</span></div></pre></td></tr></table></figure>
+<p>6.创建远程管理员</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ kadmin<span class="selector-class">.local</span> -<span class="selector-tag">q</span> <span class="string">"addprinc admin/admin@BIGDATA"</span></div><div class="line">$ kadmin<span class="selector-class">.local</span> -<span class="selector-tag">q</span> <span class="string">"xst -norandkey admin/admin@BIGDATA"</span></div></pre></td></tr></table></figure>
+<p>7.修改其它配置文件<br>如果以上设置的票据是：admin/admin@BIGDATA 把/var/kerberos/krb5kdc/kadm5.acl文件内容就应该改为:</p>
+<figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="strong">*/admin@BIGDATA *</span></div></pre></td></tr></table></figure>
+<p>8.重启后KDC安装完成</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ <span class="regexp">/etc/</span>rc.d<span class="regexp">/init.d/</span>kadmin restart</div></pre></td></tr></table></figure>
+<h3 id="安装JCE"><a href="#安装JCE" class="headerlink" title="安装JCE"></a>安装JCE</h3><p>Ambari搭建集群过程中，如说是手动指定的JDK路径，一般需要在JDK中安装JCE，默认使用Ambari提供的JDK自带JCE。</p>
+<p>JDK1.7-JCE 下载地址: <a href="http://www.oracle.com/technetwork/java/javase/downloads/jce-7-download-432124.html" title="JDK1.7-JCE" target="_blank" rel="external">http://www.oracle.com/technetwork/java/javase/downloads/jce-7-download-432124.html</a><br>JDK1.8-JCE 下载地址: <a href="http://www.oracle.com/technetwork/java/javase/downloads/jce8-download-2133166.html" title="JDK1.8-JCE" target="_blank" rel="external">http://www.oracle.com/technetwork/java/javase/downloads/jce8-download-2133166.html</a><br>解压安装到${JAVA_HOME}/jre/lib/security目录下</p>
+<figure class="highlight crystal"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ unzip -o -j -q /opt/jce_policy-<span class="number">8</span>.zip -d /usr/jdk64/jdk1.<span class="number">8.0_60</span>/jre/<span class="class"><span class="keyword">lib</span>/<span class="title">security</span>/</span></div></pre></td></tr></table></figure>
+<h3 id="Kerberos-Client安装"><a href="#Kerberos-Client安装" class="headerlink" title="Kerberos Client安装"></a>Kerberos Client安装</h3><p>在Ambari菜单【Admin】-【Kerberos】-【Enable Kerberos】安装Kerberos Client，如下图：</p>
+<img src="/uploads/Kerberos-KDC-Install/Kerberos-Client-Install.jpg">
+<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><p>1.关于kadmin.local和kadmin</p>
+<p>kadmin.local和kadmin至于用哪个，取决于账户和访问权限:<br>kadmin.local（on the KDC machine）or kadmin （on others machine）<br>如果有访问kdc服务器的root权限，但是没有kerberos admin账户，使用kadmin.local<br>如果没有访问kdc服务器的root权限，但是有kerberos admin账户，使用kadmin</p>
+<p>2.添加票据</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ kadmin<span class="selector-class">.local</span></div><div class="line">addprinc -randkey test/server.bigdata@BIGDATA</div><div class="line">xst -norandkey -k /etc/security/keytabs/test<span class="selector-class">.service</span><span class="selector-class">.keytab</span> test/server.bigdata@BIGDATA</div></pre></td></tr></table></figure>
+<p>3.获取票据信息</p>
+<figure class="highlight autoit"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ kadmin.<span class="keyword">local</span></div><div class="line">getprinc test/server.bigdata<span class="symbol">@BIGDATA</span></div></pre></td></tr></table></figure>
+<p>4.列出KDC中所有票据</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ kadmin<span class="selector-class">.local</span></div><div class="line">listprincs</div></pre></td></tr></table></figure>
+<p>5.删除票据</p>
+<figure class="highlight autoit"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ kadmin.<span class="keyword">local</span></div><div class="line">delprinc test/server.bigdata<span class="symbol">@BIGDATA</span></div></pre></td></tr></table></figure>
+<p>6.缓存票据</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ kinit -k -t <span class="regexp">/etc/</span>security<span class="regexp">/keytabs/</span>test.service.keytab test/server.bigdata<span class="meta">@BIGDATA</span></div></pre></td></tr></table></figure>
+<p>7.查看或删除用户缓存的票据</p>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$ </span>klist</div><div class="line"><span class="variable">$ </span>kdestroy</div></pre></td></tr></table></figure>
+<p>参考链接：<br><a href="http://gost.isi.edu/publications/kerberos-neuman-tso.html" target="_blank" rel="external">http://gost.isi.edu/publications/kerberos-neuman-tso.html</a><br><a href="http://www.cnblogs.com/artech/archive/2011/01/24/kerberos.html" target="_blank" rel="external">http://www.cnblogs.com/artech/archive/2011/01/24/kerberos.html</a></p>
+<hr>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;前段时间折腾了点大数据安全(Security)方面的东西，主要应用是大数据集群中安全方面的配置和使用。本文简单介绍下Kerberos认证方面的知识，记录一下通过Ambari搭建的Hadoop集群，Kerberos安装过程中涉及到Kerberos KDC的安装和配置，以及一些常用的命令介绍。&lt;/p&gt;
+&lt;img src=&quot;/uploads/Kerberos-KDC-Install/Kerberos.png&quot; width=&quot;660&quot; height=&quot;440&quot;&gt;
+    
+    </summary>
+    
+      <category term="BigData" scheme="https://eshareditor.github.io/categories/BigData/"/>
+    
+    
+      <category term="Kerberos" scheme="https://eshareditor.github.io/tags/Kerberos/"/>
+    
+      <category term="Ambari" scheme="https://eshareditor.github.io/tags/Ambari/"/>
+    
+  </entry>
   
   <entry>
     <title>Hue 组件使用</title>
