@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://eshareditor.github.io/"/>
-  <updated>2016-09-18T11:44:06.977Z</updated>
+  <updated>2016-09-19T00:55:21.021Z</updated>
   <id>https://eshareditor.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://eshareditor.github.io/2016/09/18/Kerberos-KDC-Install/"/>
     <id>https://eshareditor.github.io/2016/09/18/Kerberos-KDC-Install/</id>
     <published>2016-09-18T09:15:55.000Z</published>
-    <updated>2016-09-18T11:44:06.977Z</updated>
+    <updated>2016-09-19T00:55:21.021Z</updated>
     
     <content type="html"><![CDATA[<p>前段时间折腾了点大数据安全(Security)方面的东西，主要应用是大数据集群中安全方面的配置和使用。本文简单介绍下Kerberos认证方面的知识，记录一下通过Ambari搭建的Hadoop集群，Kerberos安装过程中涉及到Kerberos KDC的安装和配置，以及一些常用的命令介绍。</p>
 <img src="/uploads/Kerberos-KDC-Install/Kerberos.png" width="660" height="440">
@@ -59,10 +59,16 @@
 <figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ kadmin<span class="selector-class">.local</span></div><div class="line">listprincs</div></pre></td></tr></table></figure>
 <p>5.删除票据</p>
 <figure class="highlight autoit"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ kadmin.<span class="keyword">local</span></div><div class="line">delprinc test/server.bigdata<span class="symbol">@BIGDATA</span></div></pre></td></tr></table></figure>
-<p>6.缓存票据</p>
-<figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ kinit -k -t <span class="regexp">/etc/</span>security<span class="regexp">/keytabs/</span>test.service.keytab test/server.bigdata<span class="meta">@BIGDATA</span></div></pre></td></tr></table></figure>
-<p>7.查看或删除用户缓存的票据</p>
+<p>6.修改principal属性</p>
+<figure class="highlight autoit"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$kadmin.<span class="keyword">local</span></div><div class="line">modprinc -maxrenewlife <span class="number">30</span>days test/server.bigdata<span class="symbol">@BIGDATA</span></div></pre></td></tr></table></figure>
+<p>7.缓存票据</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ klist -k -t <span class="regexp">/etc/</span>security<span class="regexp">/keytabs/</span>test.service.keytab</div><div class="line">$ kinit -k -t <span class="regexp">/etc/</span>security<span class="regexp">/keytabs/</span>test.service.keytab test/server.bigdata<span class="meta">@BIGDATA</span></div><div class="line">$ kinit -k -t <span class="regexp">/etc/</span>security<span class="regexp">/keytabs/</span>test.service.keytab  -c <span class="regexp">/tmp/</span>testkeytab test/server.bigdata<span class="meta">@BIGDATA</span></div></pre></td></tr></table></figure>
+<p>8.更新票据</p>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$ </span>kinit -R</div></pre></td></tr></table></figure>
+<p>9.查看或删除用户缓存的票据</p>
 <figure class="highlight elixir"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$ </span>klist</div><div class="line"><span class="variable">$ </span>kdestroy</div></pre></td></tr></table></figure>
+<p>10.合并票据</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ ktutil</div><div class="line">$ ktutil: rkt test<span class="selector-class">.service</span><span class="selector-class">.keytab</span></div><div class="line">$ ktutil: rkt test1<span class="selector-class">.service</span><span class="selector-class">.keytab</span></div><div class="line">$ ktutil: wkt test-test1<span class="selector-class">.service</span><span class="selector-class">.keytab</span></div></pre></td></tr></table></figure>
 <p>参考链接：<br><a href="http://gost.isi.edu/publications/kerberos-neuman-tso.html" target="_blank" rel="external">http://gost.isi.edu/publications/kerberos-neuman-tso.html</a><br><a href="http://www.cnblogs.com/artech/archive/2011/01/24/kerberos.html" target="_blank" rel="external">http://www.cnblogs.com/artech/archive/2011/01/24/kerberos.html</a></p>
 <hr>
 ]]></content>
@@ -88,7 +94,7 @@
     <link href="https://eshareditor.github.io/2016/09/16/Hue-Component-Use/"/>
     <id>https://eshareditor.github.io/2016/09/16/Hue-Component-Use/</id>
     <published>2016-09-16T01:48:07.000Z</published>
-    <updated>2016-09-17T03:46:12.014Z</updated>
+    <updated>2016-09-18T12:00:08.692Z</updated>
     
     <content type="html"><![CDATA[<p>Hue作为一个能与Hadoop集群进行交互的Web UI，大大降低了用户对某些大数据组件的操作使用成本。本文通过一些简单实例来介绍Hue中某些组件的使用，如Oozie任务调度，Hbase BulkLoad数据导入，Pig数据加载等</p>
 <img src="/uploads/Hue-Component-Use/Hue-Component-Use.jpg">
@@ -206,7 +212,7 @@
     <link href="https://eshareditor.github.io/2016/09/14/Hue-%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85/"/>
     <id>https://eshareditor.github.io/2016/09/14/Hue-编译安装/</id>
     <published>2016-09-14T01:46:21.000Z</published>
-    <updated>2016-09-14T06:41:47.180Z</updated>
+    <updated>2016-09-18T12:00:03.379Z</updated>
     
     <content type="html"><![CDATA[<p>Hue是一个能够与Apache Hadoop交互的Web应用程序，一个开源的Apache Hadoop UI。<br>本文介绍Hue的编译、安装、启动过程以及记录这个过程中可能遇到的问题。</p>
 <img src="/uploads/Hue-编译安装/hue-search.png">
@@ -287,10 +293,10 @@
     <link href="https://eshareditor.github.io/2016/09/12/hello-world/"/>
     <id>https://eshareditor.github.io/2016/09/12/hello-world/</id>
     <published>2016-09-12T03:04:07.189Z</published>
-    <updated>2016-09-17T03:41:38.831Z</updated>
+    <updated>2016-09-18T11:58:18.273Z</updated>
     
     <content type="html"><![CDATA[<p>Hexo: A fast, simple &amp; powerful blog framework, powered by Node.js.</p>
-<img src="/uploads/Hello-World/Hello-World-Hexo.jpg">
+<img src="/uploads/Hello-World/Hello-World-Hexo.jpg" width="600">
 <a id="more"></a>
 <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
@@ -306,7 +312,7 @@
     <summary type="html">
     
       &lt;p&gt;Hexo: A fast, simple &amp;amp; powerful blog framework, powered by Node.js.&lt;/p&gt;
-&lt;img src=&quot;/uploads/Hello-World/Hello-World-Hexo.jpg&quot;&gt;
+&lt;img src=&quot;/uploads/Hello-World/Hello-World-Hexo.jpg&quot; width=&quot;600&quot;&gt;
     
     </summary>
     
@@ -322,11 +328,11 @@
     <link href="https://eshareditor.github.io/2016/09/09/About-Me/"/>
     <id>https://eshareditor.github.io/2016/09/09/About-Me/</id>
     <published>2016-09-09T11:00:00.000Z</published>
-    <updated>2016-09-15T09:35:03.457Z</updated>
+    <updated>2016-09-18T11:56:49.548Z</updated>
     
     <content type="html"><![CDATA[<blockquote><p>You can either travel or read,but either your body or soul must be on the way. </p>
 <footer><strong>《Roman Holiday》</strong></footer></blockquote>
-<img src="/uploads/About-Me/AboutMe_Travel.jpg">
+<img src="/uploads/About-Me/AboutMe_Travel.jpg" width="600">
 <a id="more"></a>
 ]]></content>
     
@@ -334,14 +340,14 @@
     
       &lt;blockquote&gt;&lt;p&gt;You can either travel or read,but either your body or soul must be on the way. &lt;/p&gt;
 &lt;footer&gt;&lt;strong&gt;《Roman Holiday》&lt;/strong&gt;&lt;/footer&gt;&lt;/blockquote&gt;
-&lt;img src=&quot;/uploads/About-Me/AboutMe_Travel.jpg&quot;&gt;
+&lt;img src=&quot;/uploads/About-Me/AboutMe_Travel.jpg&quot; width=&quot;600&quot;&gt;
     
     </summary>
     
       <category term="Life" scheme="https://eshareditor.github.io/categories/Life/"/>
     
     
-      <category term="life" scheme="https://eshareditor.github.io/tags/life/"/>
+      <category term="Life" scheme="https://eshareditor.github.io/tags/Life/"/>
     
   </entry>
   

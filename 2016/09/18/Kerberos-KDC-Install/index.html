@@ -115,7 +115,7 @@
 <meta property="og:image" content="https://eshareditor.github.io/uploads/Kerberos-KDC-Install/Kerberos.png">
 <meta property="og:image" content="https://eshareditor.github.io/uploads/Kerberos-KDC-Install/Kerberos.png">
 <meta property="og:image" content="https://eshareditor.github.io/uploads/Kerberos-KDC-Install/Kerberos-Client-Install.jpg">
-<meta property="og:updated_time" content="2016-09-18T11:44:06.977Z">
+<meta property="og:updated_time" content="2016-09-19T00:55:21.021Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="基于Ambari的Kerberos安装和命令使用">
 <meta name="twitter:description" content="前段时间折腾了点大数据安全(Security)方面的东西，主要应用是大数据集群中安全方面的配置和使用。本文简单介绍下Kerberos认证方面的知识，记录一下通过Ambari搭建的Hadoop集群，Kerberos安装过程中涉及到Kerberos KDC的安装和配置，以及一些常用的命令介绍。">
@@ -423,10 +423,16 @@
 <figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ kadmin<span class="selector-class">.local</span></div><div class="line">listprincs</div></pre></td></tr></table></figure>
 <p>5.删除票据</p>
 <figure class="highlight autoit"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ kadmin.<span class="keyword">local</span></div><div class="line">delprinc test/server.bigdata<span class="symbol">@BIGDATA</span></div></pre></td></tr></table></figure>
-<p>6.缓存票据</p>
-<figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ kinit -k -t <span class="regexp">/etc/</span>security<span class="regexp">/keytabs/</span>test.service.keytab test/server.bigdata<span class="meta">@BIGDATA</span></div></pre></td></tr></table></figure>
-<p>7.查看或删除用户缓存的票据</p>
+<p>6.修改principal属性</p>
+<figure class="highlight autoit"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$kadmin.<span class="keyword">local</span></div><div class="line">modprinc -maxrenewlife <span class="number">30</span>days test/server.bigdata<span class="symbol">@BIGDATA</span></div></pre></td></tr></table></figure>
+<p>7.缓存票据</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ klist -k -t <span class="regexp">/etc/</span>security<span class="regexp">/keytabs/</span>test.service.keytab</div><div class="line">$ kinit -k -t <span class="regexp">/etc/</span>security<span class="regexp">/keytabs/</span>test.service.keytab test/server.bigdata<span class="meta">@BIGDATA</span></div><div class="line">$ kinit -k -t <span class="regexp">/etc/</span>security<span class="regexp">/keytabs/</span>test.service.keytab  -c <span class="regexp">/tmp/</span>testkeytab test/server.bigdata<span class="meta">@BIGDATA</span></div></pre></td></tr></table></figure>
+<p>8.更新票据</p>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$ </span>kinit -R</div></pre></td></tr></table></figure>
+<p>9.查看或删除用户缓存的票据</p>
 <figure class="highlight elixir"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$ </span>klist</div><div class="line"><span class="variable">$ </span>kdestroy</div></pre></td></tr></table></figure>
+<p>10.合并票据</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ ktutil</div><div class="line">$ ktutil: rkt test<span class="selector-class">.service</span><span class="selector-class">.keytab</span></div><div class="line">$ ktutil: rkt test1<span class="selector-class">.service</span><span class="selector-class">.keytab</span></div><div class="line">$ ktutil: wkt test-test1<span class="selector-class">.service</span><span class="selector-class">.keytab</span></div></pre></td></tr></table></figure>
 <p>参考链接：<br><a href="http://gost.isi.edu/publications/kerberos-neuman-tso.html" target="_blank" rel="external">http://gost.isi.edu/publications/kerberos-neuman-tso.html</a><br><a href="http://www.cnblogs.com/artech/archive/2011/01/24/kerberos.html" target="_blank" rel="external">http://www.cnblogs.com/artech/archive/2011/01/24/kerberos.html</a></p>
 <hr>
 
