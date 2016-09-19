@@ -88,7 +88,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Hue," />
 
 
 
@@ -106,15 +106,18 @@
 
 
 
-<meta name="description" content="Do whatever you want.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="EsharEditor">
-<meta property="og:url" content="https://eshareditor.github.io/categories/Web/index.html">
+<meta name="description" content="本文主要介绍一些Hue的命令操作，如通过命令行重置用户密码、创建超级用户、同步Linux用户、更换Hue元数据存储位置等">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hue CLI Operation">
+<meta property="og:url" content="https://eshareditor.github.io/2016/09/19/Hue-CLI-Operation/index.html">
 <meta property="og:site_name" content="EsharEditor">
-<meta property="og:description" content="Do whatever you want.">
+<meta property="og:description" content="本文主要介绍一些Hue的命令操作，如通过命令行重置用户密码、创建超级用户、同步Linux用户、更换Hue元数据存储位置等">
+<meta property="og:image" content="https://eshareditor.github.io/uploads/Hue-CLI-Operation/Hue-CLI-Operation.jpg">
+<meta property="og:updated_time" content="2016-09-19T12:08:41.831Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="EsharEditor">
-<meta name="twitter:description" content="Do whatever you want.">
+<meta name="twitter:title" content="Hue CLI Operation">
+<meta name="twitter:description" content="本文主要介绍一些Hue的命令操作，如通过命令行重置用户密码、创建超级用户、同步Linux用户、更换Hue元数据存储位置等">
+<meta name="twitter:image" content="https://eshareditor.github.io/uploads/Hue-CLI-Operation/Hue-CLI-Operation.jpg">
 
 
 
@@ -135,9 +138,9 @@
 
 
 
-  <link rel="canonical" href="https://eshareditor.github.io/categories/Web/"/>
+  <link rel="canonical" href="https://eshareditor.github.io/2016/09/19/Hue-CLI-Operation/"/>
 
-  <title> 分类: Web | EsharEditor </title>
+  <title> Hue CLI Operation | EsharEditor </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -168,7 +171,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -289,47 +292,201 @@
           <div id="content" class="content">
             
 
-  <section id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h2 >
-        Web
-        <small>分类</small>
-      </h2>
-    </div>
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Hue CLI Operation
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-09-19T17:35:54+08:00" content="2016-09-19">
+              2016-09-19
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/BigData/" itemprop="url" rel="index">
+                    <span itemprop="name">BigData</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/09/19/Hue-CLI-Operation/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/19/Hue-CLI-Operation/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+              &nbsp; | &nbsp;
+              <span class="page-pv">本文总阅读量
+              <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+              </span>
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
       
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+      
+        <p>本文主要介绍一些Hue的命令操作，如通过命令行重置用户密码、创建超级用户、同步Linux用户、更换Hue元数据存储位置等<br><img src="/uploads/Hue-CLI-Operation/Hue-CLI-Operation.jpg" width="640"><br><a id="more"></a></p>
+<h2 id="重置用户密码"><a href="#重置用户密码" class="headerlink" title="重置用户密码"></a>重置用户密码</h2><h3 id="命令方式重置"><a href="#命令方式重置" class="headerlink" title="命令方式重置"></a>命令方式重置</h3><figure class="highlight awk"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ &#123;HUE_HOME&#125;<span class="regexp">/build/</span>env<span class="regexp">/bin/</span>hue changepassword username</div></pre></td></tr></table></figure>
+<h3 id="shell方式修改"><a href="#shell方式修改" class="headerlink" title="shell方式修改"></a>shell方式修改</h3><figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ &#123;HUE_HOME&#125;/build/env/bin/hue shell</div><div class="line"><span class="meta">&gt;&gt;</span>from django.contrib.auth.models import User</div><div class="line"><span class="meta">&gt;&gt;</span>user = User.objects.get(username=<span class="string">'test'</span>)</div><div class="line"><span class="meta">&gt;&gt;</span>user.set_password(<span class="string">'123456'</span>)</div><div class="line"><span class="meta">&gt;&gt;</span>user.save()</div></pre></td></tr></table></figure>
+<p>Hue shell亦可导入脚本批量修改用户密码，如创建脚本script.py，执行如下命令</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ &#123;HUE_HOME&#125;<span class="regexp">/build/</span>env<span class="regexp">/bin/</span>hue shell &lt; script.py</div></pre></td></tr></table></figure>
+<p>script.py内容</p>
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> django.contrib.auth.models import <span class="keyword">User</span></div><div class="line"><span class="keyword">user</span> = <span class="keyword">User</span>.objects.get(username=<span class="string">'test'</span>)</div><div class="line"><span class="keyword">user</span>.set_password('123456a')</div><div class="line"><span class="keyword">user</span>.save()</div><div class="line"><span class="keyword">user</span> = <span class="keyword">User</span>.objects.get(username=<span class="string">'test1'</span>)</div><div class="line"><span class="keyword">user</span>.set_password('123456b')</div><div class="line"><span class="keyword">user</span>.save()</div></pre></td></tr></table></figure>
+<h2 id="设置超级用户"><a href="#设置超级用户" class="headerlink" title="设置超级用户"></a>设置超级用户</h2><h3 id="命令方式设置"><a href="#命令方式设置" class="headerlink" title="命令方式设置"></a>命令方式设置</h3><figure class="highlight awk"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ &#123;HUE_HOME&#125;<span class="regexp">/build/</span>env<span class="regexp">/bin/</span>hue createsuperuser</div></pre></td></tr></table></figure>
+<h3 id="Shell方式设置"><a href="#Shell方式设置" class="headerlink" title="Shell方式设置"></a>Shell方式设置</h3><figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$ &#123;HUE_HOME&#125;/build/env/bin/hue shell</div><div class="line"><span class="meta">&gt;&gt;</span>from django.contrib.auth.models import User</div><div class="line"><span class="meta">&gt;&gt;</span>user = User.objects.get(username=<span class="string">'hdfs'</span>)</div><div class="line"><span class="meta">&gt;&gt;</span>user.is_staff = True</div><div class="line"><span class="meta">&gt;&gt;</span>user.is_superuser = True</div><div class="line"><span class="meta">&gt;&gt;</span>user.set_password(<span class="string">'hdfs'</span>)</div><div class="line"><span class="meta">&gt;&gt;</span>user.save()</div></pre></td></tr></table></figure>
+<h2 id="同步系统用户"><a href="#同步系统用户" class="headerlink" title="同步系统用户"></a>同步系统用户</h2><p>同步当前操作系统中存在的用户到Hue，但同步到Hue中的用户没有密码，需要通过超级管理员手动设置。注:Hue不能自动同步系统上存在的用户，所以每次系统新增用户时需执行同步用户。</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ &#123;HUE_HOME&#125;<span class="regexp">/build/</span>env<span class="regexp">/bin/</span>hue useradmin_sync_with_unix</div></pre></td></tr></table></figure>
+<p>可选参数：</p>
+<figure class="highlight monkey"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">--<span class="built_in">min</span>-uid=MIN_UID     Minimum UID <span class="keyword">to</span> <span class="keyword">import</span> (Inclusive).</div><div class="line">--<span class="built_in">max</span>-uid=MAX_UID     Maximum UID <span class="keyword">to</span> <span class="keyword">import</span> (Exclusive).</div><div class="line">--<span class="built_in">min</span>-gid=MIN_GID     Minimum GID <span class="keyword">to</span> <span class="keyword">import</span> (Inclusive).</div><div class="line">--<span class="built_in">max</span>-gid=MAX_GID     Maximum GID <span class="keyword">to</span> <span class="keyword">import</span> (Exclusive).</div><div class="line">--check-shell=CHECK_SHELL     Whether <span class="literal">or</span> <span class="keyword">not</span> <span class="keyword">to</span> check that the user<span class="comment">'s shell is not  /bin/false.</span></div></pre></td></tr></table></figure>
+<h2 id="元数据存储"><a href="#元数据存储" class="headerlink" title="元数据存储"></a>元数据存储</h2><h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>默认情况下，Hue的元数据是存储到SQLite数据库（一款轻型的关系型数据库，常用于嵌入式设备），数据库文件$HUE_HOME/desktop/desktop.db。</p>
+<p>存在的问题:当多用户访问Hue时出现“Database is locked”的提示情况，且Hue Web页面提示：“SQLite is only recommended for small development environments with a few users”。所以将Hue的元数据存储到其它数据库中，这里使用MySQL数据库为例。</p>
+<h3 id="更换元数据存储："><a href="#更换元数据存储：" class="headerlink" title="更换元数据存储："></a>更换元数据存储：</h3><p>1.配置$HUE_HOME/desktop/conf/hui.ini文件，修改[desktop]-&gt;[[database]]相关配置信息，更改如下:</p>
+<figure class="highlight nix"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">[desktop]</div><div class="line">  [[database]]</div><div class="line">       <span class="attr">engine=mysql</span></div><div class="line">       <span class="attr">host=localhost</span></div><div class="line">       <span class="attr">port=3306</span></div><div class="line">       <span class="attr">user=root</span>     </div><div class="line">       <span class="attr">password=123456a?</span></div><div class="line">       <span class="attr">name=desktop</span></div><div class="line">       <span class="comment">##options=&#123;&#125;</span></div></pre></td></tr></table></figure>
+<p>2.在MySQL数据库中新建数据库desktop（name=desktop）,注意如果对数据库访问进行用户授权。</p>
+<p>3.同步和迁移数据库,执行命令:</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$HUE_HOME</span><span class="regexp">/build/</span>env<span class="regexp">/bin/</span>hue syncdb --noinput  (同步数据库)</div><div class="line"><span class="variable">$HUE_HOME</span><span class="regexp">/build/</span>env<span class="regexp">/bin/</span>hue migrate  （迁移数据）</div></pre></td></tr></table></figure>
+<p>参考链接：<br>[1]<a href="http://www.cloudera.com/documentation/enterprise/latest/topics/cdh_ig_hue_database.html" target="_blank" rel="external">http://www.cloudera.com/documentation/enterprise/latest/topics/cdh_ig_hue_database.html</a></p>
 
-      <h1 class="post-title">
+      
+    </div>
+
+    <div>
+      
         
-            <a class="post-title-link" href="/2016/09/12/hello-world/" itemprop="url">
-              
-                <span itemprop="name">Hexo 简介</span>
-              
-            </a>
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/wechat-qcode.jpg" alt="Kyle Joe wechat" style="width: 200px; max-width: 100%;"/>
+    <div>欢迎您扫一扫上面的微信公众号，订阅我的博客！</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
         
-      </h1>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-09-12T11:04:07+08:00"
-              content="2016-09-12" >
-          09-12
-        </time>
-      </div>
+      
+    </div>
 
-    </header>
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Hue/" rel="tag">#Hue</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/09/18/Kerberos-KDC-Install/" rel="next" title="基于Ambari的Kerberos安装和命令使用">
+                <i class="fa fa-chevron-left"></i> 基于Ambari的Kerberos安装和命令使用
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
 
+      
+    </div>
+  </div>
 
 
           </div>
@@ -337,6 +494,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/09/19/Hue-CLI-Operation/"
+           data-title="Hue CLI Operation" data-url="https://eshareditor.github.io/2016/09/19/Hue-CLI-Operation/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -356,8 +521,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.jpg"
@@ -485,6 +659,17 @@
       </section>
 
       
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#重置用户密码"><span class="nav-number">1.</span> <span class="nav-text">重置用户密码</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#命令方式重置"><span class="nav-number">1.1.</span> <span class="nav-text">命令方式重置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#shell方式修改"><span class="nav-number">1.2.</span> <span class="nav-text">shell方式修改</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置超级用户"><span class="nav-number">2.</span> <span class="nav-text">设置超级用户</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#命令方式设置"><span class="nav-number">2.1.</span> <span class="nav-text">命令方式设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Shell方式设置"><span class="nav-number">2.2.</span> <span class="nav-text">Shell方式设置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#同步系统用户"><span class="nav-number">3.</span> <span class="nav-text">同步系统用户</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#元数据存储"><span class="nav-number">4.</span> <span class="nav-text">元数据存储</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#简介"><span class="nav-number">4.1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更换元数据存储："><span class="nav-number">4.2.</span> <span class="nav-text">更换元数据存储：</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
 
     </div>
   </aside>
@@ -603,6 +788,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 
