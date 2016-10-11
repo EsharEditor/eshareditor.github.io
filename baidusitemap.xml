@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>https://eshareditor.github.io/2016/10/11/Ambari-Rest-API/</loc>
+    <lastmod>2016-10-11T07:43:53.513Z</lastmod>
+    <data>
+        <display>
+        <title>Ambari-Rest-API</title>
+        <pubTime>2016-10-11T07:22:40.000Z</pubTime>
+        
+        <tag>Ambari</tag>
+         
+         
+           
+             
+              <breadCrumb title="BigData" url="https://eshareditor.github.io/categories/BigData/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://eshareditor.github.io/2016/10/11/Ambari-Hue-Service/</loc>
     <lastmod>2016-10-11T06:39:25.071Z</lastmod>
     <data>
@@ -11,9 +31,9 @@
         <title>Ambari Hue Service</title>
         <pubTime>2016-10-11T03:19:56.000Z</pubTime>
         
-        <tag>Hue</tag>
-         
         <tag>Ambari</tag>
+         
+        <tag>Hue</tag>
          
          
            
