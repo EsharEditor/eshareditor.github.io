@@ -88,7 +88,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Ambari,Hue," />
 
 
 
@@ -106,15 +106,24 @@
 
 
 
-<meta name="description" content="Do whatever you want.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="EsharEditor">
-<meta property="og:url" content="https://eshareditor.github.io/tags/Life/index.html">
+<meta name="description" content="最近一段时间将Hue(v3.11.0)服务集成到了Ambari(v2.4.0+),通过Ambari来便捷的操作配置Hue服务。源码已提交到Github：https://github.com/EsharEditor/ambari-hue-service,基本功能的测试结束，后续Bug修复会持续进行…">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ambari Hue Service">
+<meta property="og:url" content="https://eshareditor.github.io/2016/10/11/Ambari-Hue-Service/index.html">
 <meta property="og:site_name" content="EsharEditor">
-<meta property="og:description" content="Do whatever you want.">
+<meta property="og:description" content="最近一段时间将Hue(v3.11.0)服务集成到了Ambari(v2.4.0+),通过Ambari来便捷的操作配置Hue服务。源码已提交到Github：https://github.com/EsharEditor/ambari-hue-service,基本功能的测试结束，后续Bug修复会持续进行…">
+<meta property="og:image" content="https://eshareditor.github.io/uploads/Ambari-Hue-Service/Ambari-Hue-Service.png">
+<meta property="og:image" content="https://eshareditor.github.io/uploads/Ambari-Hue-Service/Ambari-Hue-Service.png">
+<meta property="og:image" content="https://eshareditor.github.io/uploads/Ambari-Hue-Service/Ambari-Hue-config1.png">
+<meta property="og:image" content="https://eshareditor.github.io/uploads/Ambari-Hue-Service/Ambari-Hue-config2.png">
+<meta property="og:image" content="https://eshareditor.github.io/uploads/Ambari-Hue-Service/Ambari-Hue-config3.png">
+<meta property="og:image" content="https://eshareditor.github.io/uploads/Ambari-Hue-Service/Ambari-Hue-config4.png">
+<meta property="og:image" content="https://eshareditor.github.io/uploads/Ambari-Hue-Service/Ambari-Hue-action.png">
+<meta property="og:updated_time" content="2016-10-11T06:39:25.071Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="EsharEditor">
-<meta name="twitter:description" content="Do whatever you want.">
+<meta name="twitter:title" content="Ambari Hue Service">
+<meta name="twitter:description" content="最近一段时间将Hue(v3.11.0)服务集成到了Ambari(v2.4.0+),通过Ambari来便捷的操作配置Hue服务。源码已提交到Github：https://github.com/EsharEditor/ambari-hue-service,基本功能的测试结束，后续Bug修复会持续进行…">
+<meta name="twitter:image" content="https://eshareditor.github.io/uploads/Ambari-Hue-Service/Ambari-Hue-Service.png">
 
 
 
@@ -135,9 +144,9 @@
 
 
 
-  <link rel="canonical" href="https://eshareditor.github.io/tags/Life/"/>
+  <link rel="canonical" href="https://eshareditor.github.io/2016/10/11/Ambari-Hue-Service/"/>
 
-  <title> 标签: Life | EsharEditor </title>
+  <title> Ambari Hue Service | EsharEditor </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -168,7 +177,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -289,46 +298,241 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h2 >
-        Life
-        <small>标签</small>
-      </h2>
-    </div>
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Ambari Hue Service
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-10-11T11:19:56+08:00" content="2016-10-11">
+              2016-10-11
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/BigData/" itemprop="url" rel="index">
+                    <span itemprop="name">BigData</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/10/11/Ambari-Hue-Service/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/11/Ambari-Hue-Service/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+              &nbsp; | &nbsp;
+              <span class="page-pv">本文总阅读量
+              <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+              </span>
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
       
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+      
+        <p>最近一段时间将Hue(v3.11.0)服务集成到了Ambari(v2.4.0+),通过Ambari来便捷的操作配置Hue服务。源码已提交到Github：<a href="https://github.com/EsharEditor/ambari-hue-service" title="https://github.com/EsharEditor/ambari-hue-service" target="_blank" rel="external">https://github.com/EsharEditor/ambari-hue-service</a>,基本功能的测试结束，后续Bug修复会持续进行…</p>
+<img src="/uploads/Ambari-Hue-Service/Ambari-Hue-Service.png">
+<a id="more"></a>
+<h2 id="组件简介"><a href="#组件简介" class="headerlink" title="组件简介"></a>组件简介</h2><ul>
+<li>Ambari: Apache Ambari是一种基于Web的工具，支持Apache Hadoop集群的供应、管理和监控。Ambari目前已支持大多数Hadoop组件，包括HDFS、MapReduce、Yarn、Hive、Pig、 Hbase、Zookeper、Sqoop和Hcatalog等。</li>
+<li>Hue: Hadoop UI系统,实现在Web控制台与Hadoop集群进行交互来分析和处理数据。用户可以通过Hue在Web端使用大数据集群中的HDFS、Hbase、Hive、Oozie、Zookeeper、Pig等。</li>
+</ul>
+<h2 id="安装说明"><a href="#安装说明" class="headerlink" title="安装说明"></a>安装说明</h2><h3 id="版本说明"><a href="#版本说明" class="headerlink" title="版本说明"></a>版本说明</h3><p>Github中提供了两个版本的Ambari-Hue：v1.0.0和v2.0.0</p>
+<p>release-1.0.0</p>
+<ul>
+<li>Ambari: 2.1.0~2.2.2</li>
+<li>Hue: 3.9.0</li>
+</ul>
+<p>release-2.0.0</p>
+<ul>
+<li>Ambari: 2.4.0+</li>
+<li>Hue: 3.10.0+</li>
+</ul>
+<h3 id="部署Ambari-hue"><a href="#部署Ambari-hue" class="headerlink" title="部署Ambari-hue"></a>部署Ambari-hue</h3><ul>
+<li><p>下载ambari-hue到Ambari组件服务目录</p>
+<figure class="highlight crystal"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">VERSION=<span class="string">`hdp-select status hadoop-client | sed 's/hadoop-client - \([0-9]\.[0-9]\).*/\1/'`</span></div><div class="line">rm -rf /var/<span class="class"><span class="keyword">lib</span>/<span class="title">ambari</span>-<span class="title">server</span>/<span class="title">resources</span>/<span class="title">stacks</span>/<span class="title">HDP</span>/$<span class="title">VERSION</span>/<span class="title">services</span>/<span class="title">HUE</span>  </span></div><div class="line">sudo git clone <span class="symbol">https:</span>/<span class="regexp">/github.com/</span>EsharEditor/ambari-hue-service.git /var/<span class="class"><span class="keyword">lib</span>/<span class="title">ambari</span>-<span class="title">server</span>/<span class="title">resources</span>/<span class="title">stacks</span>/<span class="title">HDP</span>/$<span class="title">VERSION</span>/<span class="title">services</span>/<span class="title">HUE</span></span></div></pre></td></tr></table></figure>
+</li>
+<li><p>重启ambari-server</p>
+<figure class="highlight axapta"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">service ambari-<span class="keyword">server</span> restart</div></pre></td></tr></table></figure>
+</li>
+<li><p>在Ambari Web端的‘Action’下拉菜单中的点击‘Add Service’按钮</p>
+</li>
+</ul>
+<p>On bottom left -&gt; Actions -&gt; Add service -&gt; check Hue server -&gt; Next -&gt; Next -&gt; Change any config you like (e.g. install dir, port) -&gt; Next -&gt; Deploy</p>
+<ul>
+<li><p>默认安装目录是/usr/local/hue</p>
+</li>
+<li><p>安装成功后在Ambari界面能看到Hue服务:</p>
+<img src="/uploads/Ambari-Hue-Service/Ambari-Hue-Service.png">
+</li>
+</ul>
+<h3 id="使用Ambari-hue"><a href="#使用Ambari-hue" class="headerlink" title="使用Ambari-hue"></a>使用Ambari-hue</h3><h4 id="配置Hue"><a href="#配置Hue" class="headerlink" title="配置Hue"></a>配置Hue</h4><ul>
+<li>Ambari-hue v2.0.0版本在v1.0.0基础上做了更多的配置方面的优化，如用户能够在Ambari界面上通过Hue Service Module配置模块开启和关闭Hue中的组件服务、通过Hue User Info配置模块开启和配置unix或者Ldap用户同步、通过Hue Database配置模块配置元数据库和其它数据库信息等。如图：<img src="/uploads/Ambari-Hue-Service/Ambari-Hue-config1.png">
+<img src="/uploads/Ambari-Hue-Service/Ambari-Hue-config2.png">
+<img src="/uploads/Ambari-Hue-Service/Ambari-Hue-config3.png">
+<img src="/uploads/Ambari-Hue-Service/Ambari-Hue-config4.png">
+</li>
+</ul>
+<h4 id="Service-Action"><a href="#Service-Action" class="headerlink" title="Service Action"></a>Service Action</h4><ul>
+<li>UserSync: 从Hue安装linux节点或Ldap服务器中同步用户到Hue中</li>
+<li>DatabaseSync: 同步Hue元数据库信息<img src="/uploads/Ambari-Hue-Service/Ambari-Hue-action.png">
+</li>
+</ul>
+<h3 id="移除Hue服务"><a href="#移除Hue服务" class="headerlink" title="移除Hue服务"></a>移除Hue服务</h3><ul>
+<li><p>通过Ambari界面Hue服务‘Service Action’-‘Delete Service’</p>
+</li>
+<li><p>通过Rest API删除Hue服务</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#停止Hue</span></div><div class="line">curl -u admin:<span class="variable">$PASSWORD</span> -i -H <span class="string">'X-Requested-By: ambari'</span> -X PUT -d <span class="string">'&#123;"RequestInfo": &#123;"context" :"Stop $SERVICE via REST"&#125;, "Body": &#123;"ServiceInfo": &#123;"state": "INSTALLED"&#125;&#125;&#125;'</span> http:<span class="regexp">//</span><span class="variable">$AMBARI_HOST</span>:<span class="number">8080</span><span class="regexp">/api/</span>v1<span class="regexp">/clusters/</span><span class="variable">$CLUSTER</span><span class="regexp">/services/</span>HUE</div><div class="line"></div><div class="line"><span class="comment">#删除Hue</span></div><div class="line">curl -u admin:<span class="variable">$PASSWORD</span> -i -H <span class="string">'X-Requested-By: ambari'</span> -X DELETE http:<span class="regexp">//</span><span class="variable">$AMBARI_HOST</span>:<span class="number">8080</span><span class="regexp">/api/</span>v1<span class="regexp">/clusters/</span><span class="variable">$CLUSTER</span><span class="regexp">/services/</span>HUE</div></pre></td></tr></table></figure>
+</li>
+<li><p>删除节点上Hue相关信息</p>
+<figure class="highlight crystal"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">rm -rf /usr/local/hue*</div><div class="line">rm -rf /var/log/hue</div><div class="line">rm -rf /var/run/hue</div><div class="line">rm /usr/hdp/current/hadoop-client/<span class="class"><span class="keyword">lib</span>/<span class="title">hue</span>-<span class="title">plugins</span>-3.11.0-<span class="title">SNAPSHOT</span>.<span class="title">jar</span></span></div><div class="line">rm /usr/hdp/current/hue-server</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>注：本人使用的是本地搭建的HDP的源，Hue是自己编译打后打成hue-3.11.0.tgz包上传到本地HDP源的hue目录下。</p>
 
-      <h1 class="post-title">
+      
+    </div>
+
+    <div>
+      
         
-            <a class="post-title-link" href="/2016/09/09/About-Me/" itemprop="url">
-              
-                <span itemprop="name">About Me</span>
-              
-            </a>
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/wechat-qcode.jpg" alt="Kyle Joe wechat" style="width: 200px; max-width: 100%;"/>
+    <div>欢迎您扫一扫上面的微信公众号，订阅我的博客！</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
         
-      </h1>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-09-09T19:00:00+08:00"
-              content="2016-09-09" >
-          09-09
-        </time>
-      </div>
+      
+    </div>
 
-    </header>
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Ambari/" rel="tag">#Ambari</a>
+          
+            <a href="/tags/Hue/" rel="tag">#Hue</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/09/19/Hue-CLI-Operation/" rel="next" title="Hue CLI Operation">
+                <i class="fa fa-chevron-left"></i> Hue CLI Operation
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </article>
 
 
-    
-  </div>
 
-  
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
 
 
           </div>
@@ -336,6 +540,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/10/11/Ambari-Hue-Service/"
+           data-title="Ambari Hue Service" data-url="https://eshareditor.github.io/2016/10/11/Ambari-Hue-Service/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -355,8 +567,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.jpg"
@@ -484,6 +705,17 @@
       </section>
 
       
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#组件简介"><span class="nav-number">1.</span> <span class="nav-text">组件简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装说明"><span class="nav-number">2.</span> <span class="nav-text">安装说明</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#版本说明"><span class="nav-number">2.1.</span> <span class="nav-text">版本说明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#部署Ambari-hue"><span class="nav-number">2.2.</span> <span class="nav-text">部署Ambari-hue</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用Ambari-hue"><span class="nav-number">2.3.</span> <span class="nav-text">使用Ambari-hue</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#配置Hue"><span class="nav-number">2.3.1.</span> <span class="nav-text">配置Hue</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Service-Action"><span class="nav-number">2.3.2.</span> <span class="nav-text">Service Action</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#移除Hue服务"><span class="nav-number">2.4.</span> <span class="nav-text">移除Hue服务</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
 
     </div>
   </aside>
@@ -602,6 +834,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 

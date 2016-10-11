@@ -4,8 +4,50 @@
 
     
   <url>
+    <loc>https://eshareditor.github.io/2016/10/11/Ambari-Hue-Service/</loc>
+    <lastmod>2016-10-11T06:39:25.071Z</lastmod>
+    <data>
+        <display>
+        <title>Ambari Hue Service</title>
+        <pubTime>2016-10-11T03:19:56.000Z</pubTime>
+        
+        <tag>Ambari</tag>
+         
+        <tag>Hue</tag>
+         
+         
+           
+             
+              <breadCrumb title="BigData" url="https://eshareditor.github.io/categories/BigData/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://eshareditor.github.io/2016/09/09/About-Me/</loc>
+    <lastmod>2016-09-22T02:45:27.397Z</lastmod>
+    <data>
+        <display>
+        <title>About Me</title>
+        <pubTime>2016-09-09T11:00:00.000Z</pubTime>
+        
+        <tag>Life</tag>
+         
+         
+           
+             
+              <breadCrumb title="Life" url="https://eshareditor.github.io/categories/Life/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://eshareditor.github.io/2016/09/19/Hue-CLI-Operation/</loc>
-    <lastmod>2016-09-19T12:08:41.831Z</lastmod>
+    <lastmod>2016-09-20T10:06:30.302Z</lastmod>
     <data>
         <display>
         <title>Hue CLI Operation</title>
@@ -31,9 +73,9 @@
         <title>基于Ambari的Kerberos安装和命令使用</title>
         <pubTime>2016-09-18T09:15:55.000Z</pubTime>
         
-        <tag>Kerberos</tag>
-         
         <tag>Ambari</tag>
+         
+        <tag>Kerberos</tag>
          
          
            
@@ -99,26 +141,6 @@
            
              
               <breadCrumb title="Web" url="https://eshareditor.github.io/categories/Web/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://eshareditor.github.io/2016/09/09/About-Me/</loc>
-    <lastmod>2016-09-18T11:56:49.548Z</lastmod>
-    <data>
-        <display>
-        <title>About Me</title>
-        <pubTime>2016-09-09T11:00:00.000Z</pubTime>
-        
-        <tag>Life</tag>
-         
-         
-           
-             
-              <breadCrumb title="Life" url="https://eshareditor.github.io/categories/Life/"/>
           
         </display>
     </data>
