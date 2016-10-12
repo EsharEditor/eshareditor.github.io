@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://eshareditor.github.io/"/>
-  <updated>2016-10-11T07:43:53.513Z</updated>
+  <updated>2016-10-12T09:38:32.069Z</updated>
   <id>https://eshareditor.github.io/</id>
   
   <author>
@@ -14,6 +14,39 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Algorithm-Complexity</title>
+    <link href="https://eshareditor.github.io/2016/10/12/Algorithm-Complexity/"/>
+    <id>https://eshareditor.github.io/2016/10/12/Algorithm-Complexity/</id>
+    <published>2016-10-12T09:05:19.000Z</published>
+    <updated>2016-10-12T09:38:32.069Z</updated>
+    
+    <content type="html"><![CDATA[<p>这篇文章覆盖了计算机科学里面常见算法的时间和空间的大 OBig-O 复杂度。</p>
+<img src="/uploads/Algorithm-Complexity/Algorithm-Complexity.jpg" width="660" height="500">
+<a id="more"></a>
+<h2 id="图例注解"><a href="#图例注解" class="headerlink" title="图例注解"></a>图例注解</h2><img src="/uploads/Algorithm-Complexity/Annotation.jpg">
+<h2 id="数据结构操作"><a href="#数据结构操作" class="headerlink" title="数据结构操作"></a>数据结构操作</h2><img src="/uploads/Algorithm-Complexity/Data_Structure.jpg" width="660" height="500">
+<h2 id="数组排序算法"><a href="#数组排序算法" class="headerlink" title="数组排序算法"></a>数组排序算法</h2><img src="/uploads/Algorithm-Complexity/Array_Sort.jpg" width="660" height="500">
+<h2 id="图操作"><a href="#图操作" class="headerlink" title="图操作"></a>图操作</h2><img src="/uploads/Algorithm-Complexity/Graph_Manipulation.jpg" width="660" height="500">
+<h2 id="堆操作"><a href="#堆操作" class="headerlink" title="堆操作"></a>堆操作</h2><img src="/uploads/Algorithm-Complexity/Heap_Operation.jpg" width="660" height="500">
+<h2 id="大O复杂度表"><a href="#大O复杂度表" class="headerlink" title="大O复杂度表"></a>大O复杂度表</h2><img src="/uploads/Algorithm-Complexity/O_Complexity.jpg" width="660" height="500">
+<p>参考链接：<br><a href="https://linux.cn/article-7480-1.html" title="https://linux.cn/article-7480-1.html" target="_blank" rel="external">https://linux.cn/article-7480-1.html</a><br><a href="http://bigocheatsheet.com/" title="http://bigocheatsheet.com/" target="_blank" rel="external">http://bigocheatsheet.com/</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;这篇文章覆盖了计算机科学里面常见算法的时间和空间的大 OBig-O 复杂度。&lt;/p&gt;
+&lt;img src=&quot;/uploads/Algorithm-Complexity/Algorithm-Complexity.jpg&quot; width=&quot;660&quot; height=&quot;500&quot;&gt;
+    
+    </summary>
+    
+      <category term="Arithmetic" scheme="https://eshareditor.github.io/categories/Arithmetic/"/>
+    
+    
+      <category term="Arithmetic" scheme="https://eshareditor.github.io/tags/Arithmetic/"/>
+    
+  </entry>
   
   <entry>
     <title>Ambari-Rest-API</title>
@@ -125,9 +158,9 @@
       <category term="BigData" scheme="https://eshareditor.github.io/categories/BigData/"/>
     
     
-      <category term="Ambari" scheme="https://eshareditor.github.io/tags/Ambari/"/>
-    
       <category term="Hue" scheme="https://eshareditor.github.io/tags/Hue/"/>
+    
+      <category term="Ambari" scheme="https://eshareditor.github.io/tags/Ambari/"/>
     
   </entry>
   

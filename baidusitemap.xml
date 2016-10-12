@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>https://eshareditor.github.io/2016/10/12/Algorithm-Complexity/</loc>
+    <lastmod>2016-10-12T09:38:32.069Z</lastmod>
+    <data>
+        <display>
+        <title>Algorithm-Complexity</title>
+        <pubTime>2016-10-12T09:05:19.000Z</pubTime>
+        
+        <tag>Arithmetic</tag>
+         
+         
+           
+             
+              <breadCrumb title="Arithmetic" url="https://eshareditor.github.io/categories/Arithmetic/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://eshareditor.github.io/2016/10/11/Ambari-Rest-API/</loc>
     <lastmod>2016-10-11T07:43:53.513Z</lastmod>
     <data>
@@ -31,9 +51,9 @@
         <title>Ambari Hue Service</title>
         <pubTime>2016-10-11T03:19:56.000Z</pubTime>
         
-        <tag>Ambari</tag>
-         
         <tag>Hue</tag>
+         
+        <tag>Ambari</tag>
          
          
            
