@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://eshareditor.github.io/"/>
-  <updated>2016-10-12T09:38:32.069Z</updated>
+  <updated>2016-10-12T09:40:15.523Z</updated>
   <id>https://eshareditor.github.io/</id>
   
   <author>
@@ -20,9 +20,9 @@
     <link href="https://eshareditor.github.io/2016/10/12/Algorithm-Complexity/"/>
     <id>https://eshareditor.github.io/2016/10/12/Algorithm-Complexity/</id>
     <published>2016-10-12T09:05:19.000Z</published>
-    <updated>2016-10-12T09:38:32.069Z</updated>
+    <updated>2016-10-12T09:40:15.523Z</updated>
     
-    <content type="html"><![CDATA[<p>这篇文章覆盖了计算机科学里面常见算法的时间和空间的大 OBig-O 复杂度。</p>
+    <content type="html"><![CDATA[<p>这篇文章覆盖了计算机科学里面常见算法的时间和空间的大O（Big-O） 复杂度。</p>
 <img src="/uploads/Algorithm-Complexity/Algorithm-Complexity.jpg" width="660" height="500">
 <a id="more"></a>
 <h2 id="图例注解"><a href="#图例注解" class="headerlink" title="图例注解"></a>图例注解</h2><img src="/uploads/Algorithm-Complexity/Annotation.jpg">
@@ -36,7 +36,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;这篇文章覆盖了计算机科学里面常见算法的时间和空间的大 OBig-O 复杂度。&lt;/p&gt;
+      &lt;p&gt;这篇文章覆盖了计算机科学里面常见算法的时间和空间的大O（Big-O） 复杂度。&lt;/p&gt;
 &lt;img src=&quot;/uploads/Algorithm-Complexity/Algorithm-Complexity.jpg&quot; width=&quot;660&quot; height=&quot;500&quot;&gt;
     
     </summary>
@@ -158,9 +158,9 @@
       <category term="BigData" scheme="https://eshareditor.github.io/categories/BigData/"/>
     
     
-      <category term="Hue" scheme="https://eshareditor.github.io/tags/Hue/"/>
-    
       <category term="Ambari" scheme="https://eshareditor.github.io/tags/Ambari/"/>
+    
+      <category term="Hue" scheme="https://eshareditor.github.io/tags/Hue/"/>
     
   </entry>
   
